@@ -31,7 +31,7 @@ export const Route = createFileRoute("/notes")({
   component: MeetingNotes,
 });
 
-function renderMarkdown-lite(md: string) {
+function renderMarkdownLite(md: string) {
   return md.split("\n").map((line, i) => {
     if (line.startsWith("## ")) {
       return (
@@ -128,7 +128,7 @@ function MeetingNotes() {
             </div>
             <div className="mt-4 flex-1 rounded-lg border border-border bg-background p-4">
               {result ? (
-                renderMarkdown-lite(result)
+                renderMarkdownLite(result)
               ) : (
                 <p className="text-sm text-muted-foreground">Structured notes appear here.</p>
               )}
@@ -161,7 +161,7 @@ function MeetingNotes() {
                       <Trash2 className="h-4 w-4" />
                     </button>
                   </summary>
-                  <div className="mt-4 border-t border-border pt-4">{renderMarkdown-lite(n.body)}</div>
+                  <div className="mt-4 border-t border-border pt-4">{renderMarkdownLite(n.body)}</div>
                 </details>
               ))}
             </div>
